@@ -12,10 +12,19 @@ const authGuard = (to, from, next) => {
     }
 }
 
+const loginGuard = (_to, _from, next) => {
+    if(store.state.user){
+        next("/questions")
+    }else{
+        next()
+    }
+}
+
 const routes = [
     {
         path: "/",
-        component: Login
+        component: Login,
+        beforeEnter: loginGuard
     },
     {
         path: "/questions",
