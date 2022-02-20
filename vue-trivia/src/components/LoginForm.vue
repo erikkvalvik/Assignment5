@@ -13,6 +13,7 @@ const displayError = ref("");
 const onSuccess = user => {
     store.commit("setUser", user[0])
     emit("onAuthSuccess")
+    localStorage.setItem("user", JSON.stringify(user[0]))
 }
 
 const onSubmit = async () => {
@@ -25,18 +26,13 @@ const onSubmit = async () => {
     displayError.value = "";
     onSuccess(user)
     console.log(user)
-    // if(error !== null){
-    //     displayError.value = error
-    // }
-    // else{
-    //     console.log("GREAT SUCCESS")
-
-    // }
+  
   } else {
     console.log("already exists");
     onSuccess(test[1])
     console.log(test[1])
   }
+  
   
 };
 </script>
