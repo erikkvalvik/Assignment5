@@ -7,6 +7,7 @@ defineProps({
 })
 
 </script>
+
 <template>
     <li>
         <span>{{question.question}}</span>
