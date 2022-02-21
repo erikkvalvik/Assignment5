@@ -19,12 +19,12 @@ console.log(questions.value[1].category)
     <h1>questions</h1>
     <p>{{user.username}}</p>
     <p>{{user.highScore}}</p>
-    <ul class="bg-slate-400 text-white font-semibold block p-5 pt-10 pb-10">
+    <ul class="bg-slate-400  block p-5 pt-10 pb-10">
         <div v-for="question in questions" :key="question.question">
-            <p class="m-2" >{{question.question}}</p>
-            <label for="correct">{{question.correct_answer}}</label>
+            <p class="m-2 text-white font-semibold" >{{question.question}}</p>
+            <label class="ml-4" for="correct">{{question.correct_answer}}</label>
             <input type="checkbox" name="correct">
-            <label for="incorrect">{{question.incorrect_answers[0]}}</label>
+            <label class="ml-4" for="incorrect">{{question.incorrect_answers[0]}}</label>
             <input type="checkbox" name="incorrect" >
         </div>
     </ul>
