@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import store from "./store";
 import Login from "./views/Login.vue";
 import QuestionScreen from "./views/QuestionScreen.vue"
-
+import ResultScreen from "./views/ResultScreen.vue"
 
 const authGuard = (to, from, next) => {
     if (!store.state.user){
@@ -29,6 +29,11 @@ const routes = [
     {
         path: "/questions",
         component: QuestionScreen,
+        beforeEnter: authGuard
+    },
+    {
+        path: "/results",
+        component: ResultScreen,
         beforeEnter: authGuard
     }
 ];
